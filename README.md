@@ -1,4 +1,4 @@
-[![Build Status][build-img]][build-url]
+
 [![Demo][demo-img]][demo-url]
 
 # Sam
@@ -8,7 +8,7 @@
 > [Zola][zola] port of [hugo-theme-sam][hugo-sam].
 
 ![Screenshot](screenshot.png)
-
+test
 ## Original
 
 This is a port of the original [hugo-theme-sam][hugo-sam] theme for Hugo ([License][upstream-license]).
