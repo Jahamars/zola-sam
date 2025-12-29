@@ -1,15 +1,11 @@
 {% extends "base.html" %}
-
 {% import "macros.html" as macros %}
-
 {% block htmltitle %}
     {{ page.title }}
 {% endblock htmltitle %}
-
 {% block title %}
     {{ page.title }}
 {% endblock title %}
-
 {% block content %}
     {% if not page.extra.no_header %}
         {% if page.date %}
@@ -32,7 +28,7 @@
         {% endif %}
         {% if page.taxonomies.tags %}
             <div class="tag-container">
-                Tags :&nbsp;
+                Tags :&nbsp;
                 {% for tag in page.taxonomies.tags %}
                     <span class="tag">
                         <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}">
@@ -57,4 +53,10 @@
         <hr/>
     {% endif %}
     {{ page.content | safe }}
+    
+    {# Добавьте эти строки в конец, перед {% endblock content %} #}
+    {% if config.extra.comments and not page.extra.no_comments %}
+        <hr/>
+        {% include "comments.html" %}
+    {% endif %}
 {% endblock content %}
